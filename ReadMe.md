@@ -9,3 +9,5 @@ To run webpack and install dependencies: npm install
 
 To start web developer server: npm start
 
+Checkout the player: http://localhost:8080/
+
