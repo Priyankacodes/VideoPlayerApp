@@ -9,4 +9,3 @@ To run webpack and install dependencies: npm install
 
 To start web developer server: npm start
 
-To run tests: yarn run test
