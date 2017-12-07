@@ -1,0 +1,6 @@
+//VIDEOS
+export const SET_VIDEOS = 'SET_VIDEOS';
+export const FETCH_VIDEOS = 'FETCH_VIDEOS';
+
+//CURRENT VIDEO
+export const SELECT_VIDEO = 'SELECT VIDEO'; 
