@@ -6,29 +6,12 @@ import VideoListContainer from '../containers/VideoListContainer';
 class RightSideBar extends Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            visible: true
-        };
-
-    }
-
-    componentWillMount() {
-
-    }
-
-    getDirectMessage() {
-    }
-
-    searchDirect() {
-        console.log('In searchDirect')
     }
 
     render() {
         return (
             <Sidebar
                 visible={true}
-                vertical
                 direction='right'
                 width='wide'
                 style={{ marginTop: '6em' }}

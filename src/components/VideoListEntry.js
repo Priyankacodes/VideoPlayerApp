@@ -6,7 +6,7 @@ const VideoListEntry = (props) => (
         <List.Content floated='left'>
             <Image src={props.video.snippet.thumbnails.default.url} alt="" />
         </List.Content>   
-        <List.Header floated='right'>   
+        <List.Header>   
             {props.video.snippet.title}
         </List.Header>
     </List.Item>

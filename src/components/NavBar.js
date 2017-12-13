@@ -6,17 +6,36 @@ class NavBar extends React.Component {
     constructor (props) {
         super(props)
 
+        this.state = {
+            auth2: {}
+        }
         this.onSignIn = this.onSignIn.bind(this)
+        this.handleLogin = this.handleLogin.bind(this)
+        this.handleAuth2 = this.handleAuth2.bind(this)
     }
 
-    onSignIn(googleUser) {
+    onSignIn (googleUser) {
         console.log("signedin");
         // Useful data for your client-side scripts:
         var profile = googleUser.getBasicProfile();
         console.log("Name: " + profile.getName());
     }
 
+    handleLogin () {
+        console.log('R')
+        this.state.auth2.signIn();
+
+    }
+
+    handleAuth2 (auth2) {
+        this.setState ({
+            auth2: auth2
+        })
+    }
     componentWillMount () {
+
+        let onSignIn = this.onSignIn
+        let handleAuth2 = this.handleAuth2
 
         gapi.load('auth2', function () {
             gapi.auth2.init({
@@ -24,6 +43,7 @@ class NavBar extends React.Component {
             }).then(function (auth2) {
                 console.log("signed in: " + auth2.isSignedIn.get());
                 auth2.isSignedIn.listen(onSignIn);
+                handleAuth2(auth2)
             });
         });
     }
@@ -36,7 +56,7 @@ class NavBar extends React.Component {
                     Video Player App
                 </Menu.Item>
                 <Menu.Item><SearchBarContainer /></Menu.Item>
-                {/* <Menu.Item position='right' style={{ marginRight: '5em' }}>Login</Menu.Item> */}
+                {/* <Menu.Item position='right' style={{ marginRight: '5em' }} onClick={() => this.handleLogin()}>Login</Menu.Item> */}
             </Menu>
         );
     }
