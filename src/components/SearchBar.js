@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Menu, Icon, Label, Input, Button } from 'semantic-ui-react';
+import { Menu, Icon, Label, Input, Button, Container } from 'semantic-ui-react';
 
 class SearchBar extends Component {
     constructor(props) {
@@ -25,17 +25,17 @@ class SearchBar extends Component {
 
     render() {
         return (
-            <div>
+            <Container style={{ width: 400 }}>
                 <Input
                     className="form-control"
                     type="text"
                     value={this.state.value}
                     onChange={this.handleInputChange}
                     icon='search'
-                    placeholder='Search Videos...'
                     fluid
+                    placeholder='Search Videos...'
                 />
-            </div>
+            </Container>
         );
     }
 }
